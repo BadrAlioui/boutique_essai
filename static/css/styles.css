@@ -9,6 +9,31 @@ body {
     overflow-x: hidden;
 }
 
+.homepage-main {
+    background: url('/static/media/images/background-image.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+.main-class {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
 .account-form,
 .contact-form {
     background-color: rgba(255, 255, 255, 0.8);
