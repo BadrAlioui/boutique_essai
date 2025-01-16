@@ -77,12 +77,21 @@ WSGI_APPLICATION = 'boutique_essai.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+# Configuration de la base de données
+if 'test' in sys.argv:
+    # Utilisation de SQLite pour les tests
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': ':memory:',
+        }
     }
-}
+else:
+    # PostgreSQL pour le développement et la production
+    DATABASES = {
+        'default': dj_database_url.config(
+            default='postgres://u6vt293eghc0hc:pcf1597d8c672c599ba940a7b5ea0bc15f951ea54c8348402f54ac5c93b3b9ea3@clhtb6lu92mj2.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com:5432/ddrbmndlpdaefa')
+    }
 
 
 # Password validation
