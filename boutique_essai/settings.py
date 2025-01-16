@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'authenticate',
     'home',
     'widget_tweaks',
+    'store',
 ]
 
 MIDDLEWARE = [

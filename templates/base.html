@@ -60,17 +60,26 @@
                                     aria-labelledby="product-dropdown"
                                 >
                                     <li>
-                                        <a href="#" class="dropdown-item">
+                                        <a
+                                            href="{% url 'products' %}?sort=price&direction=asc"
+                                            class="dropdown-item"
+                                        >
                                             By Price (Low to High)
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="dropdown-item">
+                                        <a
+                                            href="{% url 'products' %}?sort=price&direction=desc"
+                                            class="dropdown-item"
+                                        >
                                             By Price (High to Low)
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="dropdown-item">
+                                        <a
+                                            href="{% url 'products' %}?sort=rating&direction=desc"
+                                            class="dropdown-item"
+                                        >
                                             By Rating
                                         </a>
                                     </li>

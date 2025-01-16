@@ -1,0 +1,122 @@
+[
+    {
+        "model": "store.product",
+        "pk": 1,
+        "fields": {
+            "category": 3,
+            "title": "Basic White T-Shirt",
+            "brand": "H&M",
+            "description": "A comfortable and simple white t-shirt made from organic cotton.",
+            "slug": "basic-white-t-shirt",
+            "rating": 4.5,
+            "price": 12.99,
+            "image": "images/white-t-shirt.jpg",
+            "stock": 50
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 2,
+        "fields": {
+            "category": 3,
+            "title": "Graphic Black T-Shirt",
+            "brand": "Zara",
+            "description": "Stylish black t-shirt with unique graphic print.",
+            "slug": "graphic-black-t-shirt",
+            "rating": 4.7,
+            "price": 15.99,
+            "image": "images/black-t-shirt.jpg",
+            "stock": 30
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 3,
+        "fields": {
+            "category": 4,
+            "title": "Slim Fit Jeans",
+            "brand": "Levi's",
+            "description": "Classic slim-fit jeans with a modern cut.",
+            "slug": "slim-fit-jeans",
+            "rating": 4.8,
+            "price": 49.99,
+            "image": "images/slim-fit-jeans.jpg",
+            "stock": 40
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 4,
+        "fields": {
+            "category": 4,
+            "title": "Chinos",
+            "brand": "Uniqlo",
+            "description": "Comfortable chinos for everyday wear.",
+            "slug": "chinos",
+            "rating": 4.6,
+            "price": 39.99,
+            "image": "images/chinos.jpg",
+            "stock": 25
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 5,
+        "fields": {
+            "category": 3,
+            "title": "V-Neck T-Shirt",
+            "brand": "H&M",
+            "description": "A classic v-neck t-shirt for women, made from soft fabric.",
+            "slug": "v-neck-t-shirt",
+            "rating": 4.3,
+            "price": 10.99,
+            "image": "images/v-neck-t-shirt.jpg",
+            "stock": 60
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 6,
+        "fields": {
+            "category": 3,
+            "title": "Crop Top",
+            "brand": "Zara",
+            "description": "Trendy crop top for a stylish look.",
+            "slug": "crop-top",
+            "rating": 4.5,
+            "price": 14.99,
+            "image": "images/crop-top.jpg",
+            "stock": 35
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 7,
+        "fields": {
+            "category": 4,
+            "title": "Skinny Jeans",
+            "brand": "Levi's",
+            "description": "Comfortable skinny jeans with a flattering fit.",
+            "slug": "skinny-jeans",
+            "rating": 4.7,
+            "price": 44.99,
+            "image": "images/skinny-jeans.jpg",
+            "stock": 50
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 8,
+        "fields": {
+            "category": 4,
+            "title": "High-Waist Pants",
+            "brand": "Uniqlo",
+            "description": "High-waist pants perfect for work or casual wear.",
+            "slug": "high-waist-pants",
+            "rating": 4.6,
+            "price": 42.99,
+            "image": "images/high-waist-pants.jpg",
+            "stock": 30
+        }
+    }
+]
