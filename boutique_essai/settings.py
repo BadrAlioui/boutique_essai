@@ -1,11 +1,18 @@
 from pathlib import Path
-import dj_database_url
 import os
+import django_heroku
+from decouple import config
+import dj_database_url
 import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+#https://www.youtube.com/watch?v=fQo9ivqX4xs
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -16,7 +23,7 @@ SECRET_KEY = 'django-insecure-$)=e9m%v0kpkf@21=1o-d3im#ut*jokfcc=q#7-f3%vt3fgo96
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -58,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'store.context_processors.categories_processor',
             ],
         },
     },
@@ -135,3 +143,16 @@ DEFAULT_FROM_EMAIL = 'studentinstitute2024@gmail.com'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+django_heroku.settings(locals())
+
+
+# Cloudinary -Django integration
+
+cloudinary.config(
+    cloud_name = "dbi9dhanq",
+    api_key = "778114457955977",
+    api_secret = "GytK3sofNmLZxc3ma8w8rZ-gTDk",
+
+
+)

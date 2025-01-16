@@ -22,11 +22,14 @@ def admin_required(user):
 
 def all_products(request):
     products = Product.objects.all()
+    categories = Category.objects.all()
     query = None
     sort = None
     direction = None
+    selected_category = None
 
     if request.GET:
+        # Gestion du tri
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
@@ -40,6 +43,7 @@ def all_products(request):
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
 
+        # Gestion de la recherche
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -49,16 +53,22 @@ def all_products(request):
             queries = Q(title__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
+        # Gestion du filtre par catégorie
+        if 'category' in request.GET:
+            selected_category = request.GET['category']
+            products = products.filter(category__slug=selected_category)
+
     current_sorting = f'{sort}_{direction}'
 
     context = {
         'products': products,
         'search_term': query,
         'current_sorting': current_sorting,
+        'categories': categories,
+        'selected_category': selected_category,
     }
 
     return render(request, 'store/products.html', context)
-
 
 def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)

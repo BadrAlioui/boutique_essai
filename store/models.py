@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 from django.core.validators import MinValueValidator
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 class Category(models.Model):
     name = models.CharField(max_length=200, db_index=True)
@@ -22,7 +23,7 @@ class Product(models.Model):
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2,
                                 validators=[MinValueValidator(0.1)])
-    image = models.ImageField(upload_to='images/', null = True, blank=True)
+    image = CloudinaryField('images', null = True, blank=True)
     stock = models.IntegerField(default=0, blank=True, verbose_name="Stock du produit")
 
     class Meta:

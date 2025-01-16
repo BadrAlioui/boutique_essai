@@ -59,6 +59,16 @@
                                     class="dropdown-menu"
                                     aria-labelledby="product-dropdown"
                                 >
+                                    {% for category in categories %}
+                                    <li>
+                                        <a
+                                            href="{% url 'products' %}?category={{ category.slug }}"
+                                            class="dropdown-item"
+                                        >
+                                            {{category.name}}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
                                     <li>
                                         <a
                                             href="{% url 'products' %}?sort=price&direction=asc"
